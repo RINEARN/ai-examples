@@ -32,7 +32,7 @@
 
 ### 必用に応じて、知識の原稿をいじる
 
-このリポジトリ内の「 q_and_a/knowledge_ja/ 」フォルダ内にある、Markdown のファイル（拡張子 .md）が、AIに追加する知識の原稿です。このリポジトリ内には以下の 2 枚が用意されています：
+このリポジトリ内の「 q_and_a/knowledge_ja/ 」フォルダ内にある、Markdown のファイル（拡張子 .md）が、AIに追加する知識の原稿です。このリポジトリ内には以下の 3 枚が用意されています：
 
 * [takenoko.md](https://github.com/RINEARN/ai-examples/blob/develop/q_and_a/knowledge_ja/takenoko.md) - 架空の流行語「たけのこポテンシャル」に関する知識原稿です。
 * [kinoko.md](https://github.com/RINEARN/ai-examples/blob/develop/q_and_a/knowledge_ja/kinoko.md) - 架空の流行語「きのこストリーム」に関する知識原稿です。
