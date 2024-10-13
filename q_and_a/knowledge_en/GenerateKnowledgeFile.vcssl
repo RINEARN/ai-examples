@@ -1,0 +1,88 @@
+coding UTF-8;
+
+// ================================================================================
+// Textfiles to Knowledge-JSONs Converter
+// (Simplified Version)
+// 
+// Made by: RINEARN (Fumihiro Matsui)
+// Licence: Unlicense or CC0 (Dual License)
+// ================================================================================
+
+import System;
+import File;
+import Text;
+
+
+/**
+ * The process starts from this function.
+ */
+void main() {
+	
+	// Open the output JSON file
+	int outputFile = open("./knowledge_en.json", System.WRITE, "UTF-8");
+	writeln(outputFile, "{");
+	
+	// Load each manuscript page one by one and embed them as elements in the output JSON
+	int pageIndex = 0;
+	loadAndWritePage(outputFile, "./misanswers.md", "Frequently Misanswered Questions", "Compiles examples of questions that you often provide incorrect answers to.", pageIndex++);
+	writeln(outputFile, ",");
+	loadAndWritePage(outputFile, "./bamboo.md", "Bamboo Shoot Potential", "Provides a detailed explanation of Bamboo Shoot Potential.", pageIndex++);
+	writeln(outputFile, ",");
+	loadAndWritePage(outputFile, "./mushroom.md", "Mushroom Flow", "Provides a detailed explanation of Mushroom Flow.", pageIndex++);
+	writeln(outputFile, "");
+	
+	// Close the output JSON file
+	writeln(outputFile, "}");
+	close(outputFile);
+	
+	println("Process completed!");
+}
+
+
+/**
+ * Reads the content of the specified manuscript file, converts it, and writes it as an element in the output JSON file.
+ * However, newlines and commas at the end of elements are not added, so the caller must handle this.
+ * 
+ * @param inputFile The manuscript file
+ * @param outputFile The output JSON file
+ * @param title The title of the manuscript
+ * @param description A short description of the manuscript
+ */
+void loadAndWritePage(int outputFile, string inputFilePath, string title, string description, int pageIndex) {
+	writeln(outputFile, "	\"page" + pageIndex + "\": {");
+	writeln(outputFile, "		\"title\": \"" + title + "\",");
+	writeln(outputFile, "		\"description\": \"" + description + "\",");
+	write(outputFile, "		\"text\": \"");
+	
+	// Read the entire content of the manuscript file, concatenate into a single line, escape it, and write it into the JSON
+	int inputFile = open(inputFilePath, System.READ, "UTF-8");
+	int lineCount = countln(inputFile);
+	for (int iline=0; iline<lineCount; iline++) {
+		string line = readln(inputFile);
+		line = escape(line);
+		write(outputFile, line + "\\n");
+	}
+	writeln(outputFile, "\"");
+	write(outputFile, "	}");
+	close(inputFile);
+	
+	println("Embedding completed: " + inputFilePath);
+}
+
+
+/**
+ * Escapes special characters from the content read from the manuscript file so it can be written inside a JSON element.
+ * 
+ * @param line The content to be written
+ * @return The content with special characters escaped
+ */
+private string escape(string line) {
+	line = replaceText(line, "\\", "\\\\", Text.ALL);
+	line = replaceText(line, "\"", "\\\"", Text.ALL);
+	line = replaceText(line, "/", "\\/", Text.ALL);
+	line = replaceText(line, "	", "\\t", Text.ALL);
+	line = replaceText(line, CR+LF, LF, Text.ALL);
+	line = replaceText(line, LF, "\\n", Text.ALL);
+	return line;
+}
+
