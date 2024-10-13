@@ -1,0 +1,89 @@
+coding UTF-8;
+
+// ================================================================================
+// Textfiles to Knowledge-JSONs Converter
+// (Simplified Version)
+// 
+// Made by: RINEARN (Fumihiro Matsui)
+// Licence: Unlicense or CC0 (Dual License)
+// ================================================================================
+
+import System;
+import File;
+import Text;
+
+
+/**
+ * 処理はこの関数から始まります。
+ */
+void main() {
+	
+	// 出力 JSON ファイルを開く
+	int outputFile = open("./knowledge_ja.json", System.WRITE, "UTF-8");
+	writeln(outputFile, "{");
+	
+	// 原稿ページを 1 枚ずつ読み込み、出力 JSON 内に要素として埋め込んでいく
+	int pageIndex = 0;
+	loadAndWritePage(outputFile, "./misanswers.md", "よくある誤回答集", "AIがよく間違った回答をしてしまう、要注意な質問の例をまとめています。", pageIndex++);
+	writeln(outputFile, ",");
+	loadAndWritePage(outputFile, "./takenoko.md", "たけのこポテンシャル", "「たけのこポテンシャル」について詳しく解説しています。", pageIndex++);
+	writeln(outputFile, ",");
+	loadAndWritePage(outputFile, "./kinoko.md", "きのこストリーム", "「きのこストリーム」について詳しく解説しています。", pageIndex++);
+	writeln(outputFile, "");
+	
+	// 出力 JSON ファイルを閉じる
+	writeln(outputFile, "}");
+	close(outputFile);
+	
+	println("処理完了 !");
+}
+
+
+/**
+ * 指定された原稿ファイルの内容を読み込み、変換して、出力 JSON ファイル内に要素として書き込みます。
+ * ただし、要素末尾の改行やカンマ付加はされないため、呼び出し側で行う必要があります。
+ * 
+ * @param inputFile 原稿ファイル
+ * @param outputFile 出力 JSON ファイル
+ * @param isLast 最後の原稿の場合に true を指定します
+ * @param title 原稿のタイトル
+ * @param description 原稿の短い説明
+ */
+void loadAndWritePage(int outputFile, string inputFilePath, string title, string description, int pageIndex) {
+	writeln(outputFile, "	\"page" + pageIndex + "\": {");
+	writeln(outputFile, "		\"title\": \"" + title + "\",");
+	writeln(outputFile, "		\"description\": \"" + description + "\",");
+	write(outputFile, "		\"text\": \"");
+	
+	// 原稿ファイルの中身を全部読み、1行にまとめる＆エスケープして、JSON 内に書き込む
+	int inputFile = open(inputFilePath, System.READ, "UTF-8");
+	int lineCount = countln(inputFile);
+	for (int iline=0; iline<lineCount; iline++) {
+		string line = readln(inputFile);
+		line = escape(line);
+		write(outputFile, line + "\\n");
+	}
+	writeln(outputFile, "\"");
+	write(outputFile, "	}");
+	close(inputFile);
+	
+	println("埋め込み完了: " + inputFilePath);
+}
+
+
+/**
+ * 原稿ファイルから読み込まれた 1 行の内容を、JSON の要素内に書き込むために、特殊文字をエスケープします。
+ * 
+ * @param line 書き込む内容
+ * @return 特殊文字がエスケープされた内容
+ */
+private string escape(string line) {
+	line = replaceText(line, "\\", "\\\\", Text.ALL);
+	line = replaceText(line, "\"", "\\\"", Text.ALL);
+	line = replaceText(line, "/", "\\/", Text.ALL);
+	line = replaceText(line, "	", "\\t", Text.ALL);
+	line = replaceText(line, CR+LF, LF, Text.ALL);
+	line = replaceText(line, LF, "\\n", Text.ALL);
+	return line;
+}
+
