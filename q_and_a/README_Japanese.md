@@ -1,5 +1,7 @@
 # 質問応答AIのサンプル
 
+&raquo; [English README](./README.md)
+
 架空の流行語「たけのこポテンシャル」と「きのこストリーム」の知識を持っており、それらの語について質問をすると、知識に基づいて答えてくれるAIです。以下で実際に会話できます（要 ChatGPT アカウント）：
 
 * [質問応答AIサンプル](https://chatgpt.com/g/g-giXBqSDlG-zhi-wen-ying-da-aisanhuru)
@@ -26,7 +28,7 @@
 
 ### AIの作成
 
-まず、ChatGPT の GPTs 上で、AIを一つ作成しておきます。手順は [先述の解説記事](https://www.rinearn.com/ja-jp/ai/) で詳しく説明しています。
+まず、ChatGPT の GPTs 上で、AIを一つ作成しておきます。手順は [先述の解説記事](https://www.rinearn.com/ja-jp/info/news/2024/1012-how-to-create-assistant-ai) で詳しく説明しています。
 
 ### 必用に応じて、知識の原稿をいじる
 
@@ -40,7 +42,7 @@
 
 ### 知識原稿群を、1 枚の JSON ファイルに変換
 
-続いて、上記の Markdown 原稿をすべてまとめて、1 枚の JSON ファイル内に埋め込みます。これは精度を出すために重要なステップで、理由は [先述の解説記事](https://www.rinearn.com/ja-jp/ai/) をご参照ください。
+続いて、上記の Markdown 原稿をすべてまとめて、1 枚の JSON ファイル内に埋め込みます。これは精度を出すために重要なステップで、理由は [先述の解説記事](https://www.rinearn.com/ja-jp/info/news/2024/1012-how-to-create-assistant-ai) をご参照ください。
 
 この変換は、一般の変換サービスや、スクリプトなどを書いて容易に行えます。このリポジトリ内にも、変換を行うための VCSSL 製のスクリプトが同梱されています：
 
