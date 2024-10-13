@@ -1,4 +1,4 @@
-# Sample AI Collection
+# Example AI Collection
 
 &raquo; [Japanese README](./README_Japanese.md)
 
