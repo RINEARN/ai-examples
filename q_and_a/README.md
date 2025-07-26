@@ -8,7 +8,7 @@ This AI is knowledgeable about two fictional trending terms, "**Bamboo Shoot Pot
 
 For a detailed explanation on how to create this AI and key tips, check out the following article:
 
-* [Behind the Scenes of Creating an Assistant AI (Part 2: How to Create It)](https://www.rinearn.com/ja-jp/info/news/2024/1012-how-to-create-assistant-ai)
+* [Behind the Scenes of Creating an Assistant AI (Part 2: How to Create It)](https://www.rinearn.com/en-us/info/news/2024/1012-how-to-create-assistant-ai)
 
 Although this example AI is very simple, it covers the basics of an AI that "**responds to questions based on custom knowledge**." You can use a similar approach to create something like a "Q&A AI for your custom library or software." You can even make it accessible via a browser, as shown above - perfect for GitHub, don’t you think?
 
@@ -26,7 +26,7 @@ All documents and content in this repository are published under the "Unlicense,
 
 ### Creating the AI
 
-First, create an AI on ChatGPT’s GPTs. The detailed steps are explained in [the previous article](https://www.rinearn.com/ja-jp/info/news/2024/1012-how-to-create-assistant-ai).
+First, create an AI on ChatGPT’s GPTs. The detailed steps are explained in [the previous article](https://www.rinearn.com/en-us/info/news/2024/1012-how-to-create-assistant-ai).
 
 ### Editing the Knowledge Base (if needed)
 
@@ -42,7 +42,7 @@ Feel free to modify these contents or create new documents as needed.
 
 ### Converting the Knowledge Manuscripts into a Single JSON File
 
-Next, combine all the above Markdown manuscripts into a single JSON file. This is a crucial step for achieving accuracy, and the reasons are explained in [the previous article](https://www.rinearn.com/ja-jp/info/news/2024/1012-how-to-create-assistant-ai).
+Next, combine all the above Markdown manuscripts into a single JSON file. This is a crucial step for achieving accuracy, and the reasons are explained in [the previous article](https://www.rinearn.com/en-us/info/news/2024/1012-how-to-create-assistant-ai).
 
 You can easily perform this conversion using general conversion services or by writing a script. This repository also includes a VCSSL script for performing the conversion:
 
