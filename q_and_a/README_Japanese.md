@@ -34,9 +34,9 @@
 
 このリポジトリ内の「 q_and_a/knowledge_ja/ 」フォルダ内にある、Markdown のファイル（拡張子 .md）が、AIに追加する知識の原稿です。この原稿はすぐ後に 1 枚の JSON ファイルに変換されます。このリポジトリ内には以下の 3 枚の Markdown 原稿が用意されています：
 
-* [takenoko.md](https://github.com/RINEARN/ai-examples/blob/develop/q_and_a/knowledge_ja/takenoko.md) - 架空の流行語「たけのこポテンシャル」に関する知識原稿です。
-* [kinoko.md](https://github.com/RINEARN/ai-examples/blob/develop/q_and_a/knowledge_ja/kinoko.md) - 架空の流行語「きのこストリーム」に関する知識原稿です。
-* [misanswers.md](https://github.com/RINEARN/ai-examples/blob/develop/q_and_a/knowledge_ja/misanswers.md) - ハルシネーションを抑えるための誤回答集です。
+* [takenoko.md](https://github.com/RINEARN/ai-examples/blob/main/q_and_a/knowledge_ja/takenoko.md) - 架空の流行語「たけのこポテンシャル」に関する知識原稿です。
+* [kinoko.md](https://github.com/RINEARN/ai-examples/blob/main/q_and_a/knowledge_ja/kinoko.md) - 架空の流行語「きのこストリーム」に関する知識原稿です。
+* [misanswers.md](https://github.com/RINEARN/ai-examples/blob/main/q_and_a/knowledge_ja/misanswers.md) - ハルシネーションを抑えるための誤回答集です。
 
 必用に応じて、これらの内容をいじったり、新しい知識原稿を書いたりしてみてください。
 
@@ -50,7 +50,7 @@
 
 VCSSLの実行環境を用いて、上記スクリプトを実行すると、結果の JSON ファイル：
 
-* [knowledge_ja.json](https://github.com/RINEARN/ai-examples/blob/develop/q_and_a/knowledge_ja/knowledge_ja.json)
+* [knowledge_ja.json](https://github.com/RINEARN/ai-examples/blob/main/q_and_a/knowledge_ja/knowledge_ja.json)
 
 が生成されます。
 

@@ -34,9 +34,9 @@ The Markdown files (extension .md) in the "q_and_a/knowledge_en/" folder in this
 
 The Markdown files (extension .md) in the "q_and_a/knowledge_en/" folder in this repository are the manuscripts of the knowledge base that will be added to the AI. These files will later be converted into one JSON file. This repository contains the following three files:
 
-* [bamboo.md](https://github.com/RINEARN/ai-examples/blob/develop/q_and_a/knowledge_en/bamboo.md) - Knowledge about the fictional trending term "Bamboo Shoot Potential."
-* [mushroom.md](https://github.com/RINEARN/ai-examples/blob/develop/q_and_a/knowledge_en/mushroom.md) - Knowledge about the fictional trending term "Mushroom Flow."
-* [misanswers.md](https://github.com/RINEARN/ai-examples/blob/develop/q_and_a/knowledge_en/misanswers.md) - A collection of incorrect answers designed to suppress hallucinations.
+* [bamboo.md](https://github.com/RINEARN/ai-examples/blob/main/q_and_a/knowledge_en/bamboo.md) - Knowledge about the fictional trending term "Bamboo Shoot Potential."
+* [mushroom.md](https://github.com/RINEARN/ai-examples/blob/main/q_and_a/knowledge_en/mushroom.md) - Knowledge about the fictional trending term "Mushroom Flow."
+* [misanswers.md](https://github.com/RINEARN/ai-examples/blob/main/q_and_a/knowledge_en/misanswers.md) - A collection of incorrect answers designed to suppress hallucinations.
 
 Feel free to modify these contents or create new documents as needed.
 
@@ -50,7 +50,7 @@ You can easily perform this conversion using general conversion services or by w
 
 By running the above script in the VCSSL runtime environment, the resulting JSON file:
 
-* [knowledge_en.json](https://github.com/RINEARN/ai-examples/blob/develop/q_and_a/knowledge_en/knowledge_en.json)
+* [knowledge_en.json](https://github.com/RINEARN/ai-examples/blob/main/q_and_a/knowledge_en/knowledge_en.json)
 
 will be generated.
 
